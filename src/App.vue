@@ -9,7 +9,9 @@
 </script>
 
 <template>
-  <Navbar />
+  <!-- <header> -->
+    <Navbar />
+  <!-- </header> -->
   <RouterView />
   <KeepAlive>
     <SelectedPrints dir="rtl" v-if="route.name != 'printing'"/> 

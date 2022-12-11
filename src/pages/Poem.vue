@@ -1,11 +1,7 @@
 <template>
     <ShowCasePoem :poem="getPoem" 
-      @print=" (print) => {
-        if (!getPrints.includes(print)) {
-          getPrints.push(print)
-        }
-      }"  
-    />
+    @print="(print) => addPrint(print)"/>
+ 
 </template>
 
 <script setup>
@@ -19,6 +15,12 @@ const printsStore = usePrintsStore();
 const getPrints = computed(() => {
   return printsStore.getPrints
 })
+
+function addPrint(print) {
+  if (!getPrints.value.includes(print)) {
+    return printsStore.addPrint(print)
+  }
+}
 
 const route = useRoute();
 

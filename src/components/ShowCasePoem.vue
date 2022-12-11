@@ -23,7 +23,7 @@
     type: Object,
     required: true
   }
-})
+});
 defineEmits(['print']);
 </script>
 

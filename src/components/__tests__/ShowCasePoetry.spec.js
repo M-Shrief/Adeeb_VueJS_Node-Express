@@ -2,9 +2,13 @@ import { describe, it, expect, vitest } from 'vitest'
 import { mount } from '@vue/test-utils'
 // import { createTestingPinia } from '@pinia/testing'
 import ShowCasePoetry from '../ShowCasePoetry.vue'
+import VueRouter from 'vue-router'
+import Main from '../../pages/Main.vue'
+
 
 describe("renders poetry, use jsdom", () => {
   it("renders properly", () => {
+    
     const wrapper = mount(ShowCasePoetry, {
       props: {
         chosenVerses: [

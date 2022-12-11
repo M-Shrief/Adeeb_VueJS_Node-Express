@@ -1,6 +1,6 @@
 <template>
   <!-- Navigation Raws -->
-  <nav class="nav-raw" dir="rtl">
+  <nav id="nav-raw" dir="rtl">
     <!-- <a href="#" id="logo">المتنبي</a> -->
     <router-link to="/" id="logo">أديب</router-link>
 
@@ -17,7 +17,7 @@
 
 </script>
 <style lang="scss" scoped>
-  .nav-raw {
+  #nav-raw {
     display: flex;
     flex-direction: row;
     background-color: #1f2124;

@@ -1,8 +1,4 @@
 <template >
-  <!--
-   ترجمة الشاعر علي اليمين وعلي الشمال القصائد بتاعته معروضة بالافتتاح بتاعها
-  ومن تحت الاشعار المختارة من شعرة بالثلاث وعلي الشمال خالص الحقيبة الشعرية 
--->
   <div v-if="getPoet" dir="rtl" class="container">
     <ShowCasePoet :details="getPoet.details"/>
     <div v-for="poem in getPoet.authoredPoems" :key="poem._id" class="poems">
@@ -10,12 +6,8 @@
     </div>
 
     <ShowCasePoetry :chosen-verses="getPoet.authoredChosenVerses" dir="rtl"
-      @print="(print) => {
-        if (!getPrints.includes(print)) {
-          getPrints.push(print)
-        }
-      }"
-    />
+      @print="(print) => addPrint(print)"/>
+
     <h2>النثر</h2>
   </div>
 
@@ -29,6 +21,17 @@ import { usePrintsStore } from "../stores/prints";
 import ShowCasePoet from '../components/ShowCasePoet.vue';
 import ShowCasePoetry from '../components/ShowCasePoetry.vue';
 
+const printsStore = usePrintsStore();
+const getPrints = computed(() => {
+  return printsStore.getPrints
+})
+
+function addPrint(print) {
+  if (!getPrints.value.includes(print)) {
+    return printsStore.addPrint(print)
+  }
+}
+
 const poetStore = usePoetStore();
 const getPoet = computed(() => {
   return poetStore.getPoet
@@ -38,11 +41,8 @@ onMounted(() => {
   poetStore.fetchPoet(route.params.id);
 })
 
-const printsStore = usePrintsStore();
-const getPrints = computed(() => {
-  return printsStore.getPrints
-})
 </script>
+
 <style lang="scss" scoped>
   .container {
     display: grid;

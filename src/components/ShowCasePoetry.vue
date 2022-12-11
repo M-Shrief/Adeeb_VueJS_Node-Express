@@ -33,8 +33,6 @@ const emit = defineEmits(['print']);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-  // اعمل حجم الخط نسبي كل ما الكلام يكتر يقل المساحة 
-  //  ان البيت الشعري الواحد يملي البوكس وكل ما يزيد يقل حجم الخط زي التيشيرت
   .poetry-item {
     position: relative;
     background: #eed9c4;

@@ -1,11 +1,10 @@
 <template>
   <div id="selected-prints">
-    <p class="title">للطباعة</p>
+    <p><router-link  to="/printing" class="title" >للطباعة</router-link> </p>
       <ul class="prints" >
         <li class="prints-item" v-for="print in getPrints" :key="print._id">
           <p class="prints-item-p" v-if="print.verse" >{{print.verse[0].first}}..</p> 
           <p class="prints-item-p" v-else >{{print.first}}..</p> 
-          <!--TODO: dbl click to remove -->
         </li>
       </ul>
   </div>
@@ -35,7 +34,7 @@ const getPrints = computed(() => {
       margin-left: 0.3rem;
       font-weight: 600;
       color: #17BEBB;
-
+      text-decoration: none;
     }
     .prints {
       display: flex;

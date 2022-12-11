@@ -6,7 +6,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "npx vitest dev",
-    "test:e2e": "npx cypress open'",
+    "test:e2e": "npx cypress open",
     "cypress:open": "cypress open"
   },
   "dependencies": {
