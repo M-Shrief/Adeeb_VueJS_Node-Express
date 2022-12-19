@@ -23,6 +23,7 @@
   padding: 0.5rem;
   margin: 0.3rem;
   border: 1px solid #fff;
+  border-radius: 10px;
     &:hover {
       padding: 0.6rem;
     }

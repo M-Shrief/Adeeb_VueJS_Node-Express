@@ -1,12 +1,12 @@
 import { describe, it, expect, vitest } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createTestingPinia } from '@pinia/testing'
-import Main from '../../pages/Main.vue'
-import { useChosenVerseStore } from '../../stores/chosenVerses'
+import Poem from '../../pages/Poem.vue'
+import { usePoemStore } from '../../stores/poems'
 
-describe('renders Main page, use jsdom', () => {
+describe('Poem page, use jsdom', () => {
   it('renders', () => {
-    const wrapper = mount(Main, {
+    const wrapper = mount(Poem, {
       global: {
         plugins: [createTestingPinia({
           createSpy: vitest.fn,
@@ -14,8 +14,8 @@ describe('renders Main page, use jsdom', () => {
         })],
       },
     });
-    const chosenVersesStore = useChosenVerseStore();
-    expect(chosenVersesStore.fetchChosenVerses).toHaveBeenCalledTimes(1);
+    const poemStore = usePoemStore();
+    expect(poemStore.poem).toBeTruthy();
     
     expect(wrapper.text()).toContain("Welcome to my Pinia Store");
   })

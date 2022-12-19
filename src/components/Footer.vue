@@ -12,10 +12,10 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
    footer {
-    margin-top: 1.6rem;
     text-align: center;
+    margin-top: 1.6rem;
     font-size: 1.2rem;
     font-weight: 700;
     .profile {

@@ -4,8 +4,7 @@
     <span>Still looking for ones...</span>
     <p class="reach">Reach me if you want to..</p>
     <div class="note">
-      <p>Note: but I'm to fast to catch that you'll find me in your back!</p>
-      <p>plus, I don't like to be a partner</p>
+      <p>but you're so slow that I see you infront of me?!</p>
     </div>
   </div>
   
