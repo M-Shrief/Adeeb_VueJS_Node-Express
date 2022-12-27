@@ -11,14 +11,9 @@
   <header>
     <Navbar />
   </header>
-  <main>
-    <RouterView />
-  </main>
+  <RouterView />
   <KeepAlive>
     <SelectedPrints dir="rtl" v-if="route.name != 'printing'"/> 
   </KeepAlive>
   <Footer />
 </template>
-
-<style scoped>
-</style>
