@@ -14,11 +14,14 @@ dist-ssr
 coverage
 *.local
 
+# cypress
+/cypress
 /cypress/videos/
 /cypress/screenshots/
 /cypress/e2e/1-getting-started
 /cypress/e2e/2-advanced-examples
-
+# jest
+/src/components/__tests__/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
