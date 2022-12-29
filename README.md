@@ -1,4 +1,4 @@
-# "Adeeb آديب" VueJS with Node/Express API
+# "Adeeb أديب" VueJS with Node/Express API
 A Sample project for "Adeeb آديب" using VueJS, Pinia and vue-router. 
 Connecting with a Node/Express API leveraging axios requests.
 
