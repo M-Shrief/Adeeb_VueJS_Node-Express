@@ -24,9 +24,7 @@
     <section class="order-products">
       <div v-for="product in order.products" :key="product.print._id" class="product" 
       :style="{color: product.fontColor, background: product.backgroundColor }" >
-        <p >{{product.textType}}</p>
-        <p>{{product.clothesType}} / {{product.clothesSeason}}</p>
-        <p >{{product.size}}</p>
+        <p >{{product.fontType}}</p>
         <p v-if="product.print[0]" > {{product.print[0].first}}...</p>
         <p v-else-if="product.print.qoute">{{product.print.qoute.slice(0,30)}}...</p>
       </div>

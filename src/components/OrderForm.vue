@@ -64,14 +64,13 @@ function confirmOrder()  {
   try {
     let apiOrder = "http://localhost:3000/api/order";
     axios.post(apiOrder, order).then(res => {
-      console.log(res);
+      router.push('/orders')
     });
   }
   catch (error) {
     alert(error)
     console.log(error)
   }
-  router.push('/orders')
 };
 </script>
 

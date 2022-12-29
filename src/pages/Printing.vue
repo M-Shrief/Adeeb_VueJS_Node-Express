@@ -63,8 +63,10 @@
 
 </template>
 <script setup>
-import { usePrintsStore } from "../stores/prints";
 import {  computed, ref } from 'vue';
+// Stores
+import { usePrintsStore } from "../stores/prints";
+// Components
 import PreviewColors from "../components/PreviewColors.vue";
 import OrderForm from "../components/OrderForm.vue";
 
@@ -95,11 +97,11 @@ function addProduct() {
   let backgroundColor = document.getElementById("print").style.background;
 
   let product = {
-      print: productPrint,
-      fontType,
-      fontColor,      
-      backgroundColor,
-    };
+    print: productPrint,
+    fontType,
+    fontColor,      
+    backgroundColor,
+  };
     
   let productIndex = products.value.map(product => product.print).indexOf(productPrint);
   if (!(productIndex !== -1)) {
