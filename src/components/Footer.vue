@@ -13,7 +13,7 @@
 </template>
 
 <style lang="scss" >
-    @import '../assets/mixins.scss';
+@import '../assets/mixins.scss';
 
 footer {
   text-align: center;

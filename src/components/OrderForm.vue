@@ -74,7 +74,7 @@ function confirmOrder()  {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 @import '../assets/mixins.scss';
 
 $mainColor: #e0f2e9;
@@ -110,18 +110,18 @@ form {
         border: 1px solid $secondaryColor;
       }
     }
-    @include mQ($breakpoint-sm) {
-      padding: 0.1rem;
-      margin-top: 0.1rem;
-      input[type='text']{
-        font-size: 0.6rem;
-      }
-    }
     @include mQ($breakpoint-md) {
       padding: 0.3rem;
       margin-top: 0.3rem;
       input[type='text'] {
         font-size: 0.7rem;
+      }
+    }
+    @include mQ($breakpoint-sm) {
+      padding: 0.1rem;
+      margin-top: 0.1rem;
+      input[type='text']{
+        font-size: 0.6rem;
       }
     }
   }
@@ -137,18 +137,18 @@ form {
       p {
         margin: 0 0.6rem;
       }
-      @include mQ($breakpoint-sm) {
-        padding: 0.1rem;
-        margin: 0.1rem;
-        p {
-          font-size: 0.7rem;
-        }
-      }
       @include mQ($breakpoint-md) {
         padding: 0.15rem;
         margin: 0.15rem;
         p {
           font-size: 0.8rem;
+        }
+      }
+      @include mQ($breakpoint-sm) {
+        padding: 0.1rem;
+        margin: 0.1rem;
+        p {
+          font-size: 0.7rem;
         }
       }
     }
@@ -165,15 +165,15 @@ form {
     padding: 0.3rem;
     font-size: 1rem;
     cursor: pointer;
-    @include mQ($breakpoint-sm) {
-      margin: 0.3rem auto;
-      padding: 0.1rem;
-      font-size: 0.7rem;
-    }
     @include mQ($breakpoint-md) {
       margin: 0.4rem auto;
       padding: 0.2rem;
       font-size: 0.8rem;
+    }
+    @include mQ($breakpoint-sm) {
+      margin: 0.3rem auto;
+      padding: 0.1rem;
+      font-size: 0.7rem;
     }
   }
 }

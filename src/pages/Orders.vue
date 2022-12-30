@@ -1,4 +1,5 @@
 <template>
+  <main>
   <h2>ادخل بيانات الطلب لمتابعته</h2>
   <form @submit.prevent="fetchOrder" dir="rtl">
     <div class="container">
@@ -30,6 +31,7 @@
       </div>
     </section>
   </div>
+  </main>
 </template>
 
 <script setup>

@@ -118,9 +118,6 @@ function addProduct() {
   grid-template-columns: 75% 25%;
   color: #fff;
   margin-top: 1rem;
-  @include mQ($breakpoint-sm) {
-    grid-template-columns: 65% 35%;
-  }
   @include mQ($breakpoint-md) {
     grid-template-columns: 70% 30%;
   }
@@ -128,11 +125,11 @@ function addProduct() {
   h3 {
     text-align: center;
     padding-top: 1rem;
-    @include mQ($breakpoint-sm) {
-    font-size: 1rem;
-    }
     @include mQ($breakpoint-md) {
       font-size: 1.1rem;
+    }
+    @include mQ($breakpoint-sm) {
+    font-size: 1rem;
     }
   }
   .container {
@@ -149,11 +146,11 @@ function addProduct() {
       font-size: 1.6rem;
       width: 70%;
       margin: 0 auto;
-      @include mQ($breakpoint-sm) {
-        font-size: 0.8rem;
-      }
       @include mQ($breakpoint-md) {
         font-size: 0.9rem;
+      }
+      @include mQ($breakpoint-sm) {
+        font-size: 0.8rem;
       }
     }
     .qoute {
@@ -176,20 +173,20 @@ function addProduct() {
           margin-top: 0.3rem;
         }
       }
-      @include mQ($breakpoint-sm) {
-        .select {
-          padding: 0.2rem;
-        }
-        label {
-          font-size: 0.8rem;
-        }
-      }
       @include mQ($breakpoint-md) {
         .select {
           padding: 0.3rem;
         }
         label {
           font-size: 0.9rem;
+        }
+      }
+      @include mQ($breakpoint-sm) {
+        .select {
+          padding: 0.2rem;
+        }
+        label {
+          font-size: 0.8rem;
         }
       }
     }
@@ -203,15 +200,15 @@ function addProduct() {
       font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
-      @include mQ($breakpoint-sm) {
-        margin: 0.3rem auto;
-        padding: 0.1rem;
-        font-size: 0.7rem;
-      }
       @include mQ($breakpoint-md) {
         margin: 0.5rem auto;
         padding: 0.3rem;
         font-size: 0.8rem;
+      }
+      @include mQ($breakpoint-sm) {
+        margin: 0.3rem auto;
+        padding: 0.1rem;
+        font-size: 0.7rem;
       }
     }
   }
@@ -248,13 +245,6 @@ function addProduct() {
         cursor: pointer;
         background: $mainColor;
       }
-      @include mQ($breakpoint-sm) {
-        padding: 0.3rem;
-        margin: 0.3rem;
-        button {
-          padding: 0.1rem;
-        }
-      }
       @include mQ($breakpoint-md) {
         padding: 0.5rem;
         margin: 0.5rem;
@@ -262,6 +252,13 @@ function addProduct() {
           padding: 0.15rem;
         }
       }      
+      @include mQ($breakpoint-sm) {
+        padding: 0.3rem;
+        margin: 0.3rem;
+        button {
+          padding: 0.1rem;
+        }
+      }
     }
   }
 }

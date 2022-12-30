@@ -1,19 +1,21 @@
 <template>
-  <div class="container" dir="rtl">
-    <!-- v-if to remove component onMount error -->
-    <section id="related-data" v-if="getPoem.poet" >
-      <router-link  :to="'/poet/' + getPoem.poet._id" class="link">
-        <ShowCasePoet :details="getPoem.poet" />
-      </router-link>
-      
-      <!--ToDo: add watch function for the route.parameter to reload the state -->
-      <ShowCasePoems :poems="getPoems">
-        <h2>قصائد اخري</h2>
-      </ShowCasePoems>
-    </section>
-    <ShowCasePoem :verses="getPoem.verses" 
-    @print="(print) => addPrint(print)"/>
-  </div>
+  <main>
+    <div class="container" dir="rtl">
+      <!-- v-if to remove component onMount error -->
+      <section id="related-data" v-if="getPoem.poet" >
+        <router-link  :to="'/poet/' + getPoem.poet._id" class="link">
+          <ShowCasePoet :details="getPoem.poet" />
+        </router-link>
+        
+        <!--ToDo: add watch function for the route.parameter to reload the state -->
+        <ShowCasePoems :poems="getPoems">
+          <h2>قصائد اخري</h2>
+        </ShowCasePoems>
+      </section>
+      <ShowCasePoem :verses="getPoem.verses" 
+      @print="(print) => addPrint(print)"/>
+    </div>
+  </main>
 </template>
 
 <script setup>
@@ -75,14 +77,14 @@ function addPrint(print) {
   h2 {
     color: #f6b352;
     text-align: center;
-    @include mQ($breakpoint-sm) {
-      font-size: 1rem;
+    @include mQ($breakpoint-lg) {
+      font-size: 1.1rem;
     }
     @include mQ($breakpoint-md) {
       font-size: 1rem;
     }
-    @include mQ($breakpoint-lg) {
-      font-size: 1.1rem;
+    @include mQ($breakpoint-sm) {
+      font-size: 1rem;
     }
   }
 }
