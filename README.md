@@ -1,7 +1,6 @@
 # "Adeeb أديب" VueJS with Node/Express API
-A Sample project for "Adeeb آديب" using VueJS, Pinia and vue-router. 
-Connecting with a Node/Express API leveraging axios requests.
-
+A Sample project for "Adeeb آديب" using VueJS, Pinia and vue-router, connecting with a Node/Express API leveraging axios requests.
+While I'm using cypress for component testing.
 ## Aims and Goals
 
 The Projct is assumed to be a part of a business model that it's goal to show Arabic litereture, consisting of Poetry and Prose.
