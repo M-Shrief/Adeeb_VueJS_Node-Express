@@ -52,7 +52,6 @@ describe('<ShowCasePoetry />', () => {
 
     cy.get('.one-verse .first').should('contain', "لَو لَم يَقُد جَحفَلاً يَومَ الوَغى لَغَدا")
     cy.get('.one-verse .sec').should('contain', "مِن نَفسِهِ وَحدَها في جَحفَلٍ لَجِبِ")
-
     
   })
   it('emit (print) on button click with the proper data', () => {

@@ -55,7 +55,7 @@
               <p >{{print.qoute}}</p>
             </div>
           </div>
-          <button @click="deletePrint(print)">X</button>
+          <button @click="removePrint(print)">X</button>
         </div>
     </section>
   </div>
@@ -83,10 +83,8 @@ const printsStore = usePrintsStore();
 const getPrints = computed(() => {
   return printsStore.getPrints
 })
-
-function deletePrint(print) {
-  let printIndex = getPrints.value.map(verse => verse._id).indexOf(print._id);
-  getPrints.value.splice(printIndex, 1);
+function removePrint(print) {
+  return printsStore.removePrint(print);
 }
 
 function addProduct() {

@@ -26,8 +26,6 @@ describe('<OrderForm />', () => {
     cy.get('#products > .product').should('contain', 'نسخ')
     cy.get('#products > .product').should('contain', "إنّ حياة الأمم في ألسنتها.")
 
-
-
     cy.get('#products > .product').dblclick()
     cy.get('#products > .product').should('not.exist')
   })
