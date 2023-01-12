@@ -28,7 +28,7 @@ import {  onMounted, computed } from 'vue';
 import { usePoemStore } from "../stores/poems";
 import { usePoetStore } from "../stores/poets";
 import { useChosenVerseStore } from "../stores/chosenVerses";
-import { useProsesStore } from "../stores/proses";
+import { useProseStore } from "../stores/proses";
 import { usePrintsStore } from "../stores/prints";
 // components
 import ShowCasePoems from '../components/ShowCasePoems.vue';
@@ -53,7 +53,7 @@ const getChosenVerses = computed(() => {
   return chosenVersesStore.getChosenVerses;
 });
 
-const prosesStore = useProsesStore();
+const prosesStore = useProseStore();
 const getProses = computed(() => {
   return prosesStore.getProses;
 });

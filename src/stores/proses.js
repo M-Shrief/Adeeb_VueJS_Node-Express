@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from "axios"
 
-export const useProsesStore = defineStore("prose", {
+export const useProseStore = defineStore("prose", {
   state: () => ({
     proses: []
   }),
@@ -19,6 +19,16 @@ export const useProsesStore = defineStore("prose", {
       catch(error) {
         alert(error);
         console.log(error);
+      }
+    },
+    async fetchRandomProses(num) {
+      try {
+        const req = await axios.get(`http://localhost:3000/api/proses_random/${num}`)
+        this.proses = req.data
+      }
+      catch (error) {
+        alert(error)
+        console.log(error)
       }
     }
   }
