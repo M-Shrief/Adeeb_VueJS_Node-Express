@@ -41,42 +41,42 @@
           <button @click="getRandomPoetry(1)">شعر عشوائي</button>
           <button @click="getRandomProse(1)">نثر عشوائي</button>
         </div>
-        <div v-if="randomAdeeb">
-          <div @click="preview = randomAdeeb.verse || randomAdeeb ">
-            <div  v-if="randomAdeeb.verse"  v-for="verse in randomAdeeb.verse" :key="verse._id" class="verse"  >
+        <div v-if="randomPrint">
+          <div @click="preview = randomPrint.verse || randomPrint ">
+            <div  v-if="randomPrint.verse"  v-for="verse in randomPrint.verse" :key="verse._id" class="verse"  >
               <p >{{verse.first}}</p>
               <p  dir="ltr" >{{verse.sec}}</p>
             </div>
-            <div v-else-if="randomAdeeb.first"  class="verse" >
-              <p >{{randomAdeeb.first}}</p>
-              <p  dir="ltr" >{{randomAdeeb.sec}}</p>
+            <div v-else-if="randomPrint.first"  class="verse" >
+              <p >{{randomPrint.first}}</p>
+              <p  dir="ltr" >{{randomPrint.sec}}</p>
             </div>
-            <div v-else-if="randomAdeeb.qoute"  class="qoute" >
-              <p >{{randomAdeeb.qoute}}</p>
+            <div v-else-if="randomPrint.qoute"  class="qoute" >
+              <p >{{randomPrint.qoute}}</p>
             </div>
           </div>
         </div>
       </div>
-      <div v-for="print in getPrints" :key="print._id" class="print-item" >
-        <!-- Assigning poetry(2verses) || poetry(1verse) or prose -->
-        <div @click="preview = print.verse || print ">
-          <!-- if selected from ShowCasePoetry -->
-          <div  v-if="print.verse"  v-for="verse in print.verse" :key="verse._id" class="verse"  >
-            <p >{{verse.first}}</p>
-            <p  dir="ltr" >{{verse.sec}}</p>
+        <div v-for="print in getPrints" :key="print._id" class="print-item" >
+          <!-- Assigning poetry(2verses) || poetry(1verse) or prose -->
+          <div @click="preview = print.verse || print ">
+            <!-- if selected from ShowCasePoetry -->
+            <div  v-if="print.verse"  v-for="verse in print.verse" :key="verse._id" class="verse"  >
+              <p >{{verse.first}}</p>
+              <p  dir="ltr" >{{verse.sec}}</p>
+            </div>
+            <!-- if selected from  ShowCasePoem -->
+            <div v-else-if="print.first"  class="verse" >
+              <p >{{print.first}}</p>
+              <p  dir="ltr" >{{print.sec}}</p>
+            </div>
+            <!-- if selected from  ShowCaseProse -->
+            <div v-else-if="print.qoute"  class="qoute" >
+              <p >{{print.qoute}}</p>
+            </div>
           </div>
-          <!-- if selected from  ShowCasePoem -->
-          <div v-else-if="print.first"  class="verse" >
-            <p >{{print.first}}</p>
-            <p  dir="ltr" >{{print.sec}}</p>
-          </div>
-          <!-- if selected from  ShowCaseProse -->
-          <div v-else-if="print.qoute"  class="qoute" >
-            <p >{{print.qoute}}</p>
-          </div>
+          <button @click="removePrint(print)">X</button>
         </div>
-        <button @click="removePrint(print)">X</button>
-      </div>
     </section>
   </div>
 </template>
@@ -92,7 +92,7 @@ import PreviewColors from "../components/PreviewColors.vue";
 import OrderForm from "../components/OrderForm.vue";
 
 let preview = ref([]);
-let randomAdeeb = ref();
+let randomPrint = ref();
 // available colors in stock
 let fontColors = ref(['#fff','#000', '#2c3e50','#c80815','#42b983','#dc5318','silver','#f6b352']);
 let backgroundColors = ref([ '#000','#fff', '#2c3e50','#c80815','#42b983','#dc5318','silver','#f6b352']);
@@ -131,13 +131,13 @@ function addProduct() {
 const chosenVerseStore = useChosenVerseStore();
 function getRandomPoetry(num) {
   chosenVerseStore.fetchRandomChosenVerses(num);
-  randomAdeeb.value = chosenVerseStore.getChosenVerses[0];
+  randomPrint.value = chosenVerseStore.getChosenVerses[0];
 }
 
 const proseStore = useProseStore();
 function getRandomProse(num) {
   proseStore.fetchRandomProses(num);
-  randomAdeeb.value = proseStore.getProses[0];
+  randomPrint.value = proseStore.getProses[0];
 }
 </script>
 
