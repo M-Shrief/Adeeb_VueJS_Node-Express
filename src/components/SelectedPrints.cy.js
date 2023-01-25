@@ -39,11 +39,14 @@ describe('<SelectedPrints />', () => {
       createSpy: cy.spy,
     });
     cy.wrap(usePrintsStore()).as('printsStore');
-
   })
   it('renders prints.length properly', () => {
     // see: https://test-utils.vuejs.org/guide/
     cy.mount(SelectedPrints)
     cy.get('.prints > .prints-item').should('have.length', 3)
+    cy.get('.prints > .prints-item:first').should('contain', "لَو لَم يَقُد جَحفَلاً يَومَ الوَغى لَغَدا")
+    // cy.get('.prints > .prints-item').dblclick()
+    // cy.get('.prints > .prints-item').should('have.length', 2)
+    // cy.get('.prints > .prints-item:first').should('not.contain', "لَو لَم يَقُد جَحفَلاً يَومَ الوَغى لَغَدا")
   })
 })

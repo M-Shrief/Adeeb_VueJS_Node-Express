@@ -1,21 +1,21 @@
 <template>
   <div id="selected-prints">
-    <p><router-link  to="/printing" class="title" >للطباعة</router-link> </p>
+    <p><router-link  to="/printing" class="title" >للطباعة</router-link></p>
       <ul class="prints" >
         <li class="prints-item" v-for="print in getPrints" :key="print._id" @dblclick="removePrint(print)">
           <!-- poetry -->
-          <p class="prints-item-p" v-if="print.verse" >{{print.verse[0].first}}..</p> 
-          <p class="prints-item-p" v-else-if="print.first" >{{print.first}}..</p> 
+          <p v-if="print.verse" >{{print.verse[0].first}}..</p> 
+          <p v-else-if="print.first" >{{print.first}}..</p> 
           <!-- prose -->
-          <p class="prints-item-p" v-else-if="print.qoute" >{{print.qoute.slice(0,15)}}..</p> 
+          <p v-else-if="print.qoute" >{{print.qoute.slice(0,15)}}..</p> 
         </li>
       </ul>
   </div>
 </template>
 
 <script setup>
-import { usePrintsStore } from "../stores/prints";
 import {  computed } from 'vue';
+import { usePrintsStore } from "../stores/prints";
 
 const printsStore = usePrintsStore();
 const getPrints = computed(() => {
@@ -80,12 +80,12 @@ $secondaryColor: #2c3e50;
         background: rgba($color: $mainColor, $alpha: .8);
         color: $secondaryColor;
         cursor: pointer;
-        .prints-item-p {
+        p {
           display: none;
           padding: 0.25rem;
         }
         &:hover {
-          .prints-item-p {
+          p {
             display: inline;
             padding: 0rem;
             font-weight: 600;
@@ -93,7 +93,7 @@ $secondaryColor: #2c3e50;
         }
         @include mQ($breakpoint-sm) {
           padding: 0.1rem;
-          &:hover .prints-item-p {
+          &:hover p {
             font-size: 0.8rem;
           }
         }

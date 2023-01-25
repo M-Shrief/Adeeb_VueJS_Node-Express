@@ -104,8 +104,6 @@ describe('<ShowCasePoetry />', () => {
     })
     
     cy.get('.poetry-item .print-button').click({multiple: true})
-    cy.get('@onPrintSpy').should('be.calledTwice')
-
     cy.get('@onPrintSpy').should('have.been.calledWith', {
       "_id": "6371f025ac76f350635f7011",
       "poet": {

@@ -1,13 +1,11 @@
 <template>
   <main>
     <div class="container" dir="rtl">
-      <!-- v-if to remove component onMount error -->
       <section id="related-data" v-if="getPoem.poet" >
         <router-link  :to="'/poet/' + getPoem.poet._id" class="link">
           <ShowCasePoet :details="getPoem.poet" />
         </router-link>
         
-        <!--ToDo: add watch function for the route.parameter to reload the state -->
         <ShowCasePoems :poems="getPoems">
           <h2>قصائد اخري</h2>
         </ShowCasePoems>

@@ -2,7 +2,6 @@ import ShowCasePoems from './ShowCasePoems.vue'
 
 describe('<ShowCasePoems />', () => {
   it('renders poems(poet, intro) with the right link', () => {
-    // see: https://test-utils.vuejs.org/guide/
     cy.mount(ShowCasePoems, {
       props: {
         poems: [
