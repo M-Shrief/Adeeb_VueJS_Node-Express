@@ -33,10 +33,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import {useRouter } from 'vue-router';
-import axios from "axios";
-
-const router = useRouter();
+import { useOrdersStore } from '../stores/orders';
 
 const props = defineProps({
   products: {
@@ -50,6 +47,7 @@ function deleteProduct(product) {
   props.products.splice(productIndex, 1);
 }
 
+const orderStore = useOrdersStore();
 let order = ref({});
 function confirmOrder()  {
   let name = document.getElementById("name").value;
@@ -61,16 +59,7 @@ function confirmOrder()  {
     address,
     products: props.products
   }
-  try {
-    let apiOrder = "http://localhost:3000/api/order";
-    axios.post(apiOrder, order).then(res => {
-      router.push('/orders')
-    });
-  }
-  catch (error) {
-    alert(error)
-    console.log(error)
-  }
+  orderStore.newOrder(order);
 };
 </script>
 

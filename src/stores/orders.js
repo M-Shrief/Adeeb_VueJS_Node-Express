@@ -13,7 +13,7 @@ export const useOrdersStore = defineStore("order", {
   actions: {
     async fetchOrders(name, phone) {
       try {
-        const req = await axios.get(`http://localhost:3000/api/order/${name}/${phone}`);
+        const req = await axios.get( `http://localhost:3000/api/order/${name}/${phone}`);
         this.orders = req.data;
       }
       catch (error) {
@@ -21,5 +21,16 @@ export const useOrdersStore = defineStore("order", {
         console.log(error)
       }
     },
+    async newOrder(order)  {
+      try {
+        let apiOrder = `http://localhost:3000/api/order/store`;
+        await axios.post(apiOrder, order).then(res => {
+          router.push('/orders')
+        });
+      }
+      catch (error) {
+        alert(error)
+      }
+    }
   }
 })
