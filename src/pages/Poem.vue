@@ -20,7 +20,7 @@
 
 <script setup>
   import { onBeforeMount, computed, watch } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
+  import { useRoute } from 'vue-router';
   // stores
   import { usePoemStore } from '../stores/poems';
   import { usePrintsStore } from '../stores/prints';
@@ -30,7 +30,6 @@
   import ShowCasePoet from '../components/ShowCasePoet.vue';
 
   const route = useRoute();
-  const router = useRouter();
 
   const poemStore = usePoemStore();
   const getPoem = computed(() => {

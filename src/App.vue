@@ -11,9 +11,16 @@
   <header>
     <Navbar />
   </header>
-  <RouterView />
+  <Transition name="fade">
+    <RouterView :key="route.path" />
+  </Transition>
   <KeepAlive>
     <SelectedPrints dir="rtl" v-if="route.name != 'printing'"/> 
   </KeepAlive>
   <Footer />
 </template>
+
+<style lang="scss" scoped>
+@import './assets/mixins.scss';
+@include fade-transition;
+</style>
