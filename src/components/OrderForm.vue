@@ -20,13 +20,12 @@
       </div>
 
       <div id="products">
-        <div v-for="product in products" :key="product.print._id"
-          class="product"
+        <div v-for="product in products" :key="product.print._id" class="product"
           :style="{ color: product.fontColor, background: product.backgroundColor }"
-          @dblclick="deleteProduct(product)">
+          @dblclick="deleteProduct(products, product)">
           <p>{{ product.fontType }}</p>
-          <p v-if="product.print[0]"> {{ product.print[0].first }}...</p>
-          <p v-else-if="product.print.qoute">
+          <p v-if="product.print.verse"> {{ product.print.verse[0].first }}...</p>
+          <p v-else="product.print.qoute">
             {{ product.print.qoute.slice(0, 30) }}...</p>
         </div>
       </div>
@@ -39,7 +38,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 // stores
-import { useOrdersStore } from '../stores/orders';
+import { useOrderStore } from '../stores/orders';
 
 const router = useRouter();
 
@@ -50,12 +49,12 @@ const props = defineProps({
   }
 });
 
-function deleteProduct(product) {
-  let productIndex = props.products.map(product => product.print._id).indexOf(product.print._id);
-  props.products.splice(productIndex, 1);
+function deleteProduct(products, product) {
+  let productIndex = products.map(product => product.print._id).indexOf(product.print._id);
+  products.splice(productIndex, 1);
 }
 
-const orderStore = useOrdersStore();
+const orderStore = useOrderStore();
 let order = ref({});
 async function confirmOrder() {
   let name = document.getElementById("name").value;
@@ -67,9 +66,8 @@ async function confirmOrder() {
     address,
     products: props.products
   }
-  await orderStore.newOrder(order).then(() => {
-    router.push('/orders');
-  })
+  await orderStore.newOrder(order)
+  router.push('/orders');
 };
 </script>
 
