@@ -43,7 +43,7 @@ const getPoems = computed(() => {
 watch(
   () => route.params.id,
   (newPoemId) => {
-    poemStore.fetchPoemAndOtherPoems(route.params.id);
+    poemStore.fetchPoemAndOtherPoems(newPoemId);
   }
 );
 
