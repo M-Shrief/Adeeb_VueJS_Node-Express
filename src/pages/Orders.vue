@@ -64,7 +64,6 @@ function fetchOrder() {
   let phone = document.getElementById("phone").value;
   ordersStore.fetchOrders(name, phone);
 }
-
 </script>
 
 <style lang="scss" scoped>
